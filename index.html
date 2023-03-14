@@ -1,0 +1,311 @@
+<html>
+<head>
+    <title> C++</title>
+</head>
+<body>
+    <pre>
+        ARMSTRONG
+
+        #include <iostream>
+        using namespace std;
+        
+        int main() {
+            int num, originalNum, remainder, result = 0;
+            cout << "Enter a three-digit integer: ";
+            cin >> num;
+            originalNum = num;
+        
+            while (originalNum != 0) {
+                // remainder contains the last digit
+                remainder = originalNum % 10;
+                
+                result += remainder * remainder * remainder;
+                
+                // removing last digit from the orignal number
+                originalNum /= 10;
+            }
+        
+            if (result == num)
+                cout << num << " is an Armstrong number.";
+            else
+                cout << num << " is not an Armstrong number.";
+        
+            return 0;
+        }
+        
+        
+        
+        REVERSE
+        
+        #include <iostream>
+        using namespace std;
+        
+        int main() {
+            int num, reverseNum = 0, remainder;
+        
+            cout << "Enter an integer: ";
+            cin >> num;
+        
+            // reverse the digits of the number
+            while (num != 0) {
+                remainder = num % 10;
+                reverseNum = (reverseNum * 10) + remainder;
+                num /= 10;
+            }
+        
+            // print the reversed number
+            cout << "The reverse of the entered number is: " << reverseNum << endl;
+        
+            return 0;
+        }
+        
+        
+        FACTORIAL
+        
+        #include <iostream>
+        using namespace std;
+        
+        int main() {
+            int num;
+            unsigned long long fact = 1;
+        
+            cout << "Enter a positive integer: ";
+            cin >> num;
+        
+            // calculate the factorial of the number
+            for (int i = 1; i <= num; ++i) {
+                fact = fact*i;
+            }
+        
+            // print the factorial
+            cout << "The factorial of " << num << " is " << fact<< endl;
+        
+            return 0;
+        }
+        
+        
+        Born Die Program
+        
+        #include<iostream>
+         using namespace std;
+        class Ratio
+        {
+        public:
+        Ratio()
+        {
+        cout<<"an object is born!\n";
+        }
+        ~ Ratio()
+        {
+        cout<<"object dies!\n";
+        }
+        };
+        int  main()
+        {
+        
+        Ratio x;
+        cout<<"Now x is alive\n";
+        cout<<"Now in between the block\n";
+        {
+        Ratio y;
+        cout<<"Now y is alive\n";
+        }
+         return 0;
+         }
+        
+        
+         MULTIPLICATION TABLE
+        
+        
+         #include <iostream>
+        
+        using namespace std;
+        
+        int main() {
+            int num;
+            cout << "Enter a number: ";
+            cin >> num;
+        
+            for (int i = 1; i <= 10; i++) {
+                cout << num << " x " << i << " = " << num * i << endl;
+            }
+        
+            return 0;
+        }
+        
+        
+        CALL BY REFERENCE
+        
+        // C++ program to swap two
+        // numbers using call by
+        // reference
+        #include<bits/stdc++.h>
+        using namespace std;
+        
+        // Function which will swap
+        // two numbers using call by Reference
+        void Swap_two_numbers(int *x,
+                            int *y)
+        {
+            int temp;
+            temp = *x;
+            *x = *y;
+            *y = temp;
+        }
+        
+        // Driver code
+        int main()
+        {
+            int a = 2, b = 3;
+        
+            cout << "Before swapping a = " <<
+                    a << " , b = " << b << endl;
+            
+            // Function call to swap
+            Swap_two_numbers(&a, &b);
+        
+            cout << "After swapping a = " <<
+                    a << " , b = " << b << endl;
+            return 0;
+        }
+        
+        
+        SINGLE INHERITANCE
+        
+        
+        #include<iostream>
+        using namespace std;
+        
+        class Base{
+            public:
+            void display(){
+                cout << "This is the base class." << endl;
+            }
+        };
+        
+        class Derived: public Base{
+            public:
+            void show(){
+                cout << "This is the derived class." << endl;
+            }
+        };
+        
+        int main(){
+            Derived obj;
+            obj.display(); // calling base class function
+            obj.show(); // calling derived class function
+            return 0;
+        }
+        
+        
+        FIBONACCI 
+        
+        
+        #include <iostream>
+        
+        using namespace std;
+        
+        int main() {
+            int n, t1 = 0, t2 = 1, nextTerm = 0;
+        
+            cout << "Enter the number of terms: ";
+            cin >> n;
+        
+            cout << "Fibonacci Series: ";
+        
+            for (int i = 1; i <= n; ++i) {
+                if(i == 1) {
+                    cout << t1 << ", ";
+                    continue;
+                }
+                if(i == 2) {
+                    cout << t2 << ", ";
+                    continue;
+                }
+                nextTerm = t1 + t2;
+                t1 = t2;
+                t2 = nextTerm;
+                
+                cout << nextTerm << ", ";
+            }
+            return 0;
+        }
+        
+        
+        
+        Ascending order
+        
+        #include <iostream.h>
+        #include <conio.h>
+        
+        void main() {
+            int n, i, j, temp;
+            cout << "Enter the number of integers to be sorted: ";
+            cin >> n;
+        
+            int arr[n];
+            cout << "Enter the " << n << " integers: ";
+            for(i=0; i<n; i++) {
+                cin >> arr[i];
+            }
+        
+            for(i=0; i<n-1; i++) {
+                for(j=i+1; j<n; j++) {
+                    if(arr[i]>arr[j]) {
+                        temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+        
+            cout << "The integers in ascending order are: ";
+            for(i=0; i<n; i++) {
+                cout << arr[i] << " ";
+            }
+        
+            getch();
+        }
+        
+        
+        
+        DESCENDING 
+        
+        #include <iostream.h>
+        #include <conio.h>
+        
+        void main() {
+            int n, i, j, temp;
+            cout << "Enter the number of integers to be sorted: ";
+            cin >> n;
+        
+            int arr[n];
+            cout << "Enter the " << n << " integers: ";
+            for(i=0; i<n; i++) {
+                cin >> arr[i];
+            }
+        
+            for(i=0; i<n-1; i++) {
+                for(j=i+1; j<n; j++) {
+                    if(arr[i]<arr[j]) {
+                        temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+        
+            cout << "The integers in descending order are: ";
+            for(i=0; i<n; i++) {
+                cout << arr[i] << " ";
+            }
+        
+            getch();
+        }
+        
+
+
+    </pre>
+
+</body>
+</html>
